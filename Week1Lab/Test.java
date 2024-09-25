@@ -15,5 +15,8 @@ public class Test
       System.out.println(b1);
       System.out.println(b2);
       System.out.println(b3);
+
+      House h1 = new House();
+
    }
 }//class

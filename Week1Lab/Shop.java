@@ -17,7 +17,7 @@ public class Shop
    }
    public Shop(String address, String owner,int numEmployees, int averageTurnover){
       /** overload constructor all variables passed in call super and update house variables */
-      super(address, owner);
+      super();
       this.numEmployees = numEmployees;
       this.averageTurnover = averageTurnover;
 

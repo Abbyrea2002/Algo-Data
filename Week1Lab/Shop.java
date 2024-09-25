@@ -4,7 +4,7 @@ package Week1Lab;
  * Created by abbyr on 25/09/2024
  * COMMENTS ABOUT PROGRAM HERE
  */
-public class Shop
+public class Shop extends Building
 {
    private int numEmployees;
    private int averageTurnover;
@@ -17,7 +17,7 @@ public class Shop
    }
    public Shop(String address, String owner,int numEmployees, int averageTurnover){
       /** overload constructor all variables passed in call super and update house variables */
-      super();
+      super(address, owner);
       this.numEmployees = numEmployees;
       this.averageTurnover = averageTurnover;
 

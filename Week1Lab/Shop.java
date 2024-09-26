@@ -8,19 +8,20 @@ public class Shop extends Building
 {
    private int numEmployees;
    private int averageTurnover;
-
+   private static int numShops;
    public Shop(){
       /** default constructor calls super class and initalises instance variables*/
       super();
       this.numEmployees = 0;
       this.averageTurnover = 0;
+      Shop.numShops++;
    }
    public Shop(String address, String owner,int numEmployees, int averageTurnover){
       /** overload constructor all variables passed in call super and update house variables */
       super(address, owner);
       this.numEmployees = numEmployees;
       this.averageTurnover = averageTurnover;
-
+      Shop.numShops++;
    }
 
    public int getNumEmployees(){
@@ -37,6 +38,10 @@ public class Shop extends Building
 
    public void setAverageTurnover(int averageTurnover){
       this.averageTurnover = averageTurnover;
+   }
+
+   public static int getNumShops(){
+      return numShops;
    }
 
    public String toString(){

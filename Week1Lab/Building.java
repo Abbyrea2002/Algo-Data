@@ -7,15 +7,18 @@ package Week1Lab;
 public class Building {
    private String address;
    private String owner;
+   private static int numBuildings = 0;
 
    public Building() {
       this.address = "";
       this.owner = "";
+      Building.numBuildings++;
    }
 
    public Building(String address, String owner) {
       this.address = address;
       this.owner = owner;
+      Building.numBuildings++;
    }
 
    public String getAddress() {
@@ -32,6 +35,10 @@ public class Building {
 
    public void setOwner(String owner) {
       this.owner = owner;
+   }
+
+   public static int getNumBuildings(){
+      return numBuildings;
    }
 
    public String toString() {

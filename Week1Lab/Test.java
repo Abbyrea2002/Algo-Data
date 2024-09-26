@@ -31,11 +31,25 @@ public class Test
       h1.setNumBedrooms(4);
       h1.setHasGarage(true);
 
+      System.out.println(h1);
+
       s1.setAddress("30 Ballyway");
       s1.setOwner("Mereidth Grey");
       s1.setNumEmployees(4);
       s1.setAverageTurnover(8);
 
+      System.out.println(s1);
+
+      System.out.println(h1.getNumBedrooms());
+      System.out.println(h1.getHasGarage());
+      System.out.println(s1.getNumEmployees());
+      System.out.println(s1.getAverageTurnover());
+
+      House h3 = new House();
+      House h4 = new House();
+      Shop s3 =  new Shop();
+
+      System.out.println("There are a total of " + Building.getNumBuildings() + " buildings of which " + House.getNumHouses() + " are houses and " + Shop.getNumShops() + " are shops.");
 
    }
 }//class

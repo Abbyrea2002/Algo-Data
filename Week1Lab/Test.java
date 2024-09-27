@@ -2,6 +2,9 @@ package Week1Lab;
 
 import java.util.Random;
 import java.util.Scanner;
+
+
+
 /**
  * Created by abbyr on 25/09/2024
  * COMMENTS ABOUT PROGRAM HERE
@@ -86,6 +89,7 @@ public class Test
          owner = input.next();
          buildings[i] = new Shop(address, owner, employeees, turnover);
       }
+
 
       for(int i = 0; i < 10; i++){
          System.out.println(buildings[i]);

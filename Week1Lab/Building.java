@@ -45,15 +45,6 @@ public class Building {
       return this.address + " occupied by " + this.owner;
    }
 
-   public static void main(String[] args) {
-      Building b1 = new Building();
-      Building b2 = new Building("27 Main Street", "Rex Dog Groomer");
-      Building b3 = new Building("18 Low Street", "Mary Jones");
-      b1.setAddress("3 High Street, Smiths Newsagent");
-      b1.setOwner("Smiths");
-      System.out.println(b1);
-      System.out.println(b2);
-      System.out.println(b3);
-   }
+
 }
 

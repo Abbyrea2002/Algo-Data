@@ -46,7 +46,7 @@ public class House extends Building /** Building subclass */
 
    public String toString(){
 
-      return super.toString() + "this house contains " + this.numBedrooms + " bedrooms";
+      return super.toString() + " this house contains " + this.numBedrooms + " bedrooms";
    }
 
 

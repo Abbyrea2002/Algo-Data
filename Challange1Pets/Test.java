@@ -105,7 +105,7 @@ public class Test {
 
           }
 
-          //for loop iterates 5 times to output arrays (realised it does so 10 times due to each having 5 spaces need to fix)
+          //for loop iterates 5 times to output arrays (dont actually need test)
           for(int i = 0; i < 5; i++){
              System.out.println(cats[i]);
              System.out.println(dogs[i]);

@@ -3,9 +3,10 @@ package Challange1Pets;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-
+import java.util.List;
 public class Test {
 
+   private List<Pet> pets;
     public static int getRandomValue(int low, int high){
         Random random = new Random();
         return random.nextInt(high - low)+ low;
@@ -28,7 +29,16 @@ public class Test {
 
       return new String[]{dogBreed};
 
+
    };// same as above method
+
+
+//   public void displayCounts(){
+//      int catCount = 0;
+//      int dogCount = 0;
+//
+//      for(Pet pet: pets)
+//   }
 
     public static void main (String[] args) {
 //        Pet p1 = new Pet();
@@ -67,8 +77,8 @@ public class Test {
 
        //cat and dog array (need to fix)
        //user should only inout 5 pets, different type of array?? one array?cat
-          Cat[] cats = new Cat[5];
-          Dog[] dogs = new Dog[5];
+          //changed to one array
+          Pet[] pets = new Pet[5];
           Scanner input = new Scanner(System.in);
           //variables
           String name, species;
@@ -91,7 +101,8 @@ public class Test {
                  //calls random string, generates and stores in breed (maybe issues)
                  breed = Arrays.toString(getRandomStringCat());
                  //adds attributes into array
-                 cats[i] = new Cat(name, age, breed);
+                 pets[i] = new Cat(name, age, breed);
+
 
                //if dog
               }else if(species == "dog"){
@@ -100,16 +111,29 @@ public class Test {
                  //calls random string, generates and stores in breed (maybe issues)
                  breed = Arrays.toString(getRandomStringDog());
                  //adds attributes into array (possible issues as outputting null)
-                 dogs[i] = new Dog(name, age, breed);
+                 pets[i] = new Dog(name, age, breed);
+
               }
 
           }
 
           //for loop iterates 5 times to output arrays (dont actually need test)
-          for(int i = 0; i < 5; i++){
-             System.out.println(cats[i]);
-             System.out.println(dogs[i]);
-          }
+
+
+         System.out.println("Number of cats entered: " + Cat.getNumCats());
+         System.out.println("Number of dogs entered: " + Dog.getNumDogs());
+         String name2 = "";
+         do{
+            System.out.println("Please enter the name of your pet: ");
+            name2 = input.next();
+
+
+
+         }while(name2 != "exit");
+
+
+
+
 
 
 

@@ -3,7 +3,7 @@ package Challange1Pets;
 public class Dog extends Pet{
 
     private String breed;
-    private static int numDogs;
+    private static int numDogs = 0;
 
     public Dog(){
         //calling parent class
@@ -38,4 +38,5 @@ public class Dog extends Pet{
     public String speak(){
         return "Woof! " + super.toString() + this.breed;
     }
+
 }

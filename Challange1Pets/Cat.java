@@ -2,7 +2,7 @@ package Challange1Pets;
 
 public class Cat  extends Pet{//same as dog
   private String breed;
-  private static int numCats;
+  private static int numCats = 0;
 
   public Cat(){
       super();

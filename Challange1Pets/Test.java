@@ -19,6 +19,14 @@ public class Test {
        return new String[]{catBreed};
 
     };
+   public static String[] getRandomStringDog(){
+
+      int r = (int) (Math.random()*5);
+      String dogBreed = Arrays.toString(new String []{"Yorkie", "Lab", "Bull", "Jack Russel", "Huskie"});
+
+      return new String[]{dogBreed};
+
+   };
 
     public static void main (String[] args) {
 //        Pet p1 = new Pet();
@@ -57,8 +65,6 @@ public class Test {
 
           Cat[] cats = new Cat[5];
           Dog[] dogs = new Dog[5];
-          String[] dogBreed = {"Yorkie", "Lab", "Bull", "Jack Russel", "Huskie"};
-          String[] catBreed = {"Siamese", "Tuxedo", "Ragdoll", "Mainecoon", "British Short Hair"};
           Scanner input = new Scanner(System.in);
           String name, species;
           int age;
@@ -72,10 +78,12 @@ public class Test {
 
               if(species == "cat"){
                  age = getRandomValue(1, 14);
+                 breed = Arrays.toString(getRandomStringCat());
                  cats[i] = new Cat(name, age, breed);
 
               }else if(species == "dog"){
                  age = getRandomValue(1, 14);
+                 breed = Arrays.toString(getRandomStringDog());
                  dogs[i] = new Dog(name, age, breed);
               }
 

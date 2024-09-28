@@ -81,6 +81,8 @@ public class Test {
                  breed = Arrays.toString(getRandomStringCat());
                  cats[i] = new Cat(name, age, breed);
 
+
+
               }else if(species == "dog"){
                  age = getRandomValue(1, 14);
                  breed = Arrays.toString(getRandomStringDog());

@@ -9,7 +9,7 @@ public class Test {
     public static int getRandomValue(int low, int high){
         Random random = new Random();
         return random.nextInt(high - low)+ low;
-    }
+    }//get random value method for age of pet
 
     public static String[] getRandomStringCat(){
 
@@ -18,7 +18,9 @@ public class Test {
 
        return new String[]{catBreed};
 
-    };
+    }; //gets random string from array (what im having issues with)
+   //fixed the errors but might still be issues as output is null
+
    public static String[] getRandomStringDog(){
 
       int r = (int) (Math.random()*5);
@@ -26,7 +28,7 @@ public class Test {
 
       return new String[]{dogBreed};
 
-   };
+   };// same as above method
 
     public static void main (String[] args) {
 //        Pet p1 = new Pet();
@@ -63,35 +65,47 @@ public class Test {
 //        System.out.println(c1.getBreed());
 //        System.out.println(d1.getBreed());
 
+       //cat and dog array (need to fix)
+       //user should only inout 5 pets, different type of array?? one array?cat
           Cat[] cats = new Cat[5];
           Dog[] dogs = new Dog[5];
           Scanner input = new Scanner(System.in);
+          //variables
           String name, species;
           int age;
           String breed;
 
+          //for loop to iterate over inside code x5(thats how many times the user needs to input a pet for the arrays)
           for(int i = 0; i < 5; i++){
+             //prompts for what species theyd like to enter, stores in variable 'species'
               System.out.println("Would you like add a cat or dog?");
               species = input.next();
+              //prompts for pet name, stores in variable 'name'
               System.out.println("What is the pets name?");
               name = input.next();
 
+              //if species is cat
               if(species == "cat"){
+                 //calls random value method, generates and stores in age
                  age = getRandomValue(1, 14);
+                 //calls random string, generates and stores in breed (maybe issues)
                  breed = Arrays.toString(getRandomStringCat());
+                 //adds attributes into array
                  cats[i] = new Cat(name, age, breed);
 
-
-
+               //if dog
               }else if(species == "dog"){
+                 //calls random value method, generates and stores in age
                  age = getRandomValue(1, 14);
+                 //calls random string, generates and stores in breed (maybe issues)
                  breed = Arrays.toString(getRandomStringDog());
+                 //adds attributes into array (possible issues as outputting null)
                  dogs[i] = new Dog(name, age, breed);
               }
 
           }
 
-
+          //for loop iterates 5 times to output arrays (realised it does so 10 times due to each having 5 spaces need to fix)
           for(int i = 0; i < 5; i++){
              System.out.println(cats[i]);
              System.out.println(dogs[i]);

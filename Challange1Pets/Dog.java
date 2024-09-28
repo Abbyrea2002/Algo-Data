@@ -6,17 +6,22 @@ public class Dog extends Pet{
     private static int numDogs;
 
     public Dog(){
+        //calling parent class
         super();
+        //initialise variables
         this.breed = "";
         Dog.numDogs++;
-    }
+    }//default constructor
 
     public Dog(String name, int age, String breed){
+        //calling parent class
         super(name, age);
+        //initialise variables
         this.breed = breed;
         Dog.numDogs++;
-    }
+    }//overloaded constructed
 
+    //gets and setters
     public String getBreed(){
         return this.breed;
     }
@@ -29,6 +34,7 @@ public class Dog extends Pet{
         return numDogs;
     }
 
+    //speak method
     public String speak(){
         return "Woof! " + super.toString() + this.breed;
     }

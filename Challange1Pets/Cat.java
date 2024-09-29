@@ -1,11 +1,9 @@
 package Challange1Pets;
 
-import java.util.Arrays;
-
 public class Cat  extends Pet{//same as dog
   private String breed;
   private static int numCats = 0;
-
+  private static String [] breeds = new String []{"Siamese", "Tuxedo", "Ragdoll", "Mainecoon", "British Short Hair"};
   public Cat(){
       super();
       this.breed = "";
@@ -30,17 +28,19 @@ public class Cat  extends Pet{//same as dog
      return numCats;
   }
 
-   public static String[] getRandomStringCat(){
+   public static String getRandomBreed(){
 
-      int r = (int) (Math.random()*5);
-      String catBreed = Arrays.toString(new String []{"Siamese", "Tuxedo", "Ragdoll", "Mainecoon", "British Short Hair"});
+      // get random value from array
+         // generate a random between 0 to size of array
+         // return breed found at randomly generated index
+      int randomNumber = UtilityMethods.getRandomValue(0, 4);
+      return breeds[randomNumber];
 
-      return new String[]{catBreed};
+   }
 
-   };
 
   public String speak(){
-     return "Miaow! " + super.toString() + getRandomStringCat();
+     return "Miaow! " + super.toString() + getRandomBreed();
   }
 
 }

@@ -2,16 +2,7 @@ package Challange1Pets;
 
 import java.util.*;
 
-import static Challange1Pets.Cat.getRandomStringCat;
-import static Challange1Pets.Dog.getRandomStringDog;
-
 public class Test {
-
-
-    public static int getRandomValue(int low, int high){
-        Random random = new Random();
-        return random.nextInt(high - low)+ low;
-    }//get random value method for age of pet
 
  //gets random string from array (what im having issues with)
    //fixed the errors but might still be issues as output is null
@@ -83,9 +74,9 @@ public class Test {
               //if species is cat
               if(species.equals("cat")){
                  //calls random value method, generates and stores in age
-                 age = getRandomValue(1, 14);
+                 age = UtilityMethods.getRandomValue(1, 14);
                  //calls random string, generates and stores in breed (maybe issues)
-                 breed = Arrays.toString(Cat.getRandomStringCat());
+                 breed = Cat.getRandomBreed();
                  //adds attributes into array
                  Pet petNew = new Cat(name, age, breed);
                  MyArray.insert(petNew);
@@ -94,7 +85,7 @@ public class Test {
                //if dog
               }else if(species.equals("dog")){
                  //calls random value method, generates and stores in age
-                 age = getRandomValue(1, 14);
+                 age = UtilityMethods.getRandomValue(1, 14);
                  //calls random string, generates and stores in breed (maybe issues)
                  breed = Arrays.toString(Dog.getRandomStringDog());
                  //adds attributes into array (possible issues as outputting null)

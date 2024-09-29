@@ -1,5 +1,7 @@
 package Challange1Pets;
 
+import java.util.Arrays;
+
 public class Cat  extends Pet{//same as dog
   private String breed;
   private static int numCats = 0;
@@ -28,8 +30,17 @@ public class Cat  extends Pet{//same as dog
      return numCats;
   }
 
+   public static String[] getRandomStringCat(){
+
+      int r = (int) (Math.random()*5);
+      String catBreed = Arrays.toString(new String []{"Siamese", "Tuxedo", "Ragdoll", "Mainecoon", "British Short Hair"});
+
+      return new String[]{catBreed};
+
+   };
+
   public String speak(){
-     return "Miaow! " + super.toString() + this.breed + " Number of cats:" + numCats;
+     return "Miaow! " + super.toString() + getRandomStringCat();
   }
 
 }

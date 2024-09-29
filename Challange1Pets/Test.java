@@ -2,6 +2,9 @@ package Challange1Pets;
 
 import java.util.*;
 
+import static Challange1Pets.Cat.getRandomStringCat;
+import static Challange1Pets.Dog.getRandomStringDog;
+
 public class Test {
 
 
@@ -10,25 +13,10 @@ public class Test {
         return random.nextInt(high - low)+ low;
     }//get random value method for age of pet
 
-    public static String[] getRandomStringCat(){
-
-       int r = (int) (Math.random()*5);
-       String catBreed = Arrays.toString(new String []{"Siamese", "Tuxedo", "Ragdoll", "Mainecoon", "British Short Hair"});
-
-       return new String[]{catBreed};
-
-    }; //gets random string from array (what im having issues with)
+ //gets random string from array (what im having issues with)
    //fixed the errors but might still be issues as output is null
 
-   public static String[] getRandomStringDog(){
-
-      int r = (int) (Math.random()*5);
-      String dogBreed = Arrays.toString(new String []{"Yorkie", "Lab", "Bull", "Jack Russel", "Huskie"});
-
-      return new String[]{dogBreed};
-
-
-   };// same as above method
+// same as above method
 
 
 //   public void displayCounts(){
@@ -97,7 +85,7 @@ public class Test {
                  //calls random value method, generates and stores in age
                  age = getRandomValue(1, 14);
                  //calls random string, generates and stores in breed (maybe issues)
-                 breed = Arrays.toString(getRandomStringCat());
+                 breed = Arrays.toString(Cat.getRandomStringCat());
                  //adds attributes into array
                  Pet petNew = new Cat(name, age, breed);
                  MyArray.insert(petNew);
@@ -108,7 +96,7 @@ public class Test {
                  //calls random value method, generates and stores in age
                  age = getRandomValue(1, 14);
                  //calls random string, generates and stores in breed (maybe issues)
-                 breed = Arrays.toString(getRandomStringDog());
+                 breed = Arrays.toString(Dog.getRandomStringDog());
                  //adds attributes into array (possible issues as outputting null)
                  Pet petNew = new Dog(name, age, breed);
                  MyArray.insert(petNew);
@@ -125,18 +113,12 @@ public class Test {
             System.out.println("Please enter the name of your pet: ");
             name2 = input.next();
 
-            ArrayList<Integer> display = MyArray.findPetByName(name2);
-            if(display.size() > 0){
-               for(int i = 0; i < display.size(); i++){
-                  MyArray.displayAPet(i);
-               }
-
+            Pet foundPet = MyArray.findPetByName(name2);
+            if (foundPet != null) {
+               System.out.println(foundPet.speak());
             }else{
                System.out.println("No pet exists with this name");
             }
-
-
-
          }while(!name2.equals("exit"));
 
 

@@ -30,18 +30,13 @@ public class ArrayOfPets
 
    }
 
-   protected ArrayList<Integer> findPetByName(String name){
-      ArrayList<Integer> result = new ArrayList<Integer>();
+   protected Pet findPetByName(String name){
       for(int index = 0; index < pets.size(); index++){
          if(pets.get(index).getName().equals(name)){
-            result.add(index);
+            return pets.get(index);
          }
       }
-      return result;
-   }
-
-   protected void displayAPet(int index){
-      pets.get(index).speak();
+      return null;
    }
 
 

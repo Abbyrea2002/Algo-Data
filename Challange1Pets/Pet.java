@@ -1,9 +1,12 @@
 package Challange1Pets;
 
-public class Pet {
+abstract class Pet {
+
 
     private String name;
     private int age;
+
+    public abstract void speak();
 
     public Pet(){
        this.name = "";

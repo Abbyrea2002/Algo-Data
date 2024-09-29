@@ -117,8 +117,6 @@ public class Test {
 
           }
 
-          //for loop iterates 5 times to output arrays (dont actually need test)
-
 
          System.out.println("Number of cats entered: " + Cat.getNumCats());
          System.out.println("Number of dogs entered: " + Dog.getNumDogs());

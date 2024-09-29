@@ -1,12 +1,10 @@
 package Challange1Pets;
 
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.List;
+import java.util.*;
+
 public class Test {
 
-   private List<Pet> pets;
+
     public static int getRandomValue(int low, int high){
         Random random = new Random();
         return random.nextInt(high - low)+ low;
@@ -78,7 +76,7 @@ public class Test {
        //cat and dog array (need to fix)
        //user should only inout 5 pets, different type of array?? one array?cat
           //changed to one array
-          Pet[] pets = new Pet[5];
+          ArrayOfPets MyArray = new ArrayOfPets();
           Scanner input = new Scanner(System.in);
           //variables
           String name, species;
@@ -95,23 +93,25 @@ public class Test {
               name = input.next();
 
               //if species is cat
-              if(species == "cat"){
+              if(species.equals("cat")){
                  //calls random value method, generates and stores in age
                  age = getRandomValue(1, 14);
                  //calls random string, generates and stores in breed (maybe issues)
                  breed = Arrays.toString(getRandomStringCat());
                  //adds attributes into array
-                 pets[i] = new Cat(name, age, breed);
+                 Pet petNew = new Cat(name, age, breed);
+                 MyArray.insert(petNew);
 
 
                //if dog
-              }else if(species == "dog"){
+              }else if(species.equals("dog")){
                  //calls random value method, generates and stores in age
                  age = getRandomValue(1, 14);
                  //calls random string, generates and stores in breed (maybe issues)
                  breed = Arrays.toString(getRandomStringDog());
                  //adds attributes into array (possible issues as outputting null)
-                 pets[i] = new Dog(name, age, breed);
+                 Pet petNew = new Dog(name, age, breed);
+                 MyArray.insert(petNew);
 
               }
 
@@ -125,9 +125,19 @@ public class Test {
             System.out.println("Please enter the name of your pet: ");
             name2 = input.next();
 
+            ArrayList<Integer> display = MyArray.findPetByName(name2);
+            if(display.size() > 0){
+               for(int i = 0; i < display.size(); i++){
+                  MyArray.displayAPet(i);
+               }
+
+            }else{
+               System.out.println("No pet exists with this name");
+            }
 
 
-         }while(name2 != "exit");
+
+         }while(!name2.equals("exit"));
 
 
 

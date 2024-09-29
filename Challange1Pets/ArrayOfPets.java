@@ -13,8 +13,21 @@ public class ArrayOfPets
 
    }
 
-   protected void insert(Pet newPet){
+   protected int getNoOfPets() {
+      return pets.size();
+
+
+
+   }
+
+   protected Pet getCurrent(int position) {
+      return pets.get(position);
+   }
+
+   protected void insert(Pet newPet)
+   {
       pets.add(newPet);
+
    }
 
    protected ArrayList<Integer> findPetByName(String name){

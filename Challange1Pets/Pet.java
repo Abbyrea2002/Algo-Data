@@ -6,7 +6,7 @@ abstract class Pet {
     private String name;
     private int age;
 
-    public abstract void speak();
+    public abstract String speak();
 
     public Pet(){
        this.name = "";
